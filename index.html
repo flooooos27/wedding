@@ -1,31 +1,145 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-<meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danke, dass ihr dabei wart!</title>
 
-<style>
-html, body{
-  margin:0;
-  padding:0;
-  height:100%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:black; /* optional */
-}
+    <style>
+      * {
+        box-sizing: border-box;
+      }
 
-img{
-  max-width:100vw;
-  max-height:100vh;
-  object-fit:contain;
-}
-</style>
+      body {
+        margin: 0;
+        padding: 48px 20px;
+        min-height: 100vh;
+        background:
+          radial-gradient(
+            ellipse at 50% 0%,
+            rgb(25 74 104 / 70%),
+            transparent 55%
+          ),
+          linear-gradient(145deg, #071a2a 0%, #0b2d47 52%, #061725 100%);
+        background-attachment: fixed;
+        color: #f8f2e9;
+        font-family: Georgia, "Times New Roman", serif;
+        text-align: center;
+      }
 
-</head>
+      main {
+        width: min(100%, 900px);
+        margin: 0 auto;
+      }
 
-<body>
+      .messages {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+        margin: 0 auto 30px;
+      }
 
-<img src="wedding.png" alt="Bild">
+      .message {
+        padding: 24px 22px;
+        border: 1px solid rgb(248 242 233 / 20%);
+        border-radius: 14px;
+        background: rgb(255 255 255 / 5%);
+      }
 
-</body>
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(1.5rem, 4vw, 2.2rem);
+        font-weight: 400;
+      }
+
+      .thanks {
+        margin: 0;
+        font-size: 1.05rem;
+        line-height: 1.7;
+      }
+
+      @media (max-width: 620px) {
+        .messages {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+      }
+
+      .gallery-link {
+        display: block;
+        max-width: 520px;
+        margin: 0 auto 36px;
+        padding: 22px 28px;
+        border: 1px solid #d5c5ae;
+        border-radius: 12px;
+        background: #fffdf9;
+        color: #243b4a;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        text-decoration: none;
+        box-shadow: 0 8px 24px rgb(36 59 74 / 8%);
+        transition:
+          transform 160ms ease,
+          box-shadow 160ms ease;
+      }
+
+      .gallery-link:hover,
+      .gallery-link:focus-visible {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgb(36 59 74 / 14%);
+      }
+
+      .gallery-link strong {
+        display: block;
+        color: #8b6847;
+      }
+
+      .wedding-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <div class="messages">
+        <section class="message" lang="de">
+          <h1>Danke, dass ihr dabei wart!</h1>
+          <p class="thanks">
+            Wir sind sehr glücklich, diesen besonderen Tag mit euch gefeiert zu
+            haben. Danke für eure Liebe, eure Glückwünsche und die vielen
+            schönen Erinnerungen!
+          </p>
+        </section>
+
+        <section class="message" lang="hr">
+          <h1>Hvala vam što ste bili s nama!</h1>
+          <p class="thanks">
+            Presretni smo što smo ovaj poseban dan proslavili s vama. Hvala vam
+            na ljubavi, čestitkama i svim prekrasnim uspomenama!
+          </p>
+        </section>
+      </div>
+
+      <!-- Ersetzt https://example.com durch euren Link zur Hochzeitsgalerie. -->
+      <a
+        class="gallery-link"
+        href="https://www.icloud.com/photos/#/icloudlinks/098CbhRI_jArGORfi0jkdqj0Q/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Naše fotografije s vjenčanja · Unsere Hochzeitsfotos
+        <strong>Pogledajte galeriju · Zur Galerie&nbsp;→</strong>
+      </a>
+
+      <img
+        class="wedding-image"
+        src="wedding.png"
+        alt="Hinweis auf unsere Hochzeitsfotos / Obavijest o našim vjenčanim fotografijama"
+      />
+    </main>
+  </body>
 </html>
